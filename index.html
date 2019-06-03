@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>北京移动</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/fastclick.js"></script>
+</head>
+
+<body>
+    <section class="tc_code">
+        <div>
+            <a href="javascript:void(0)" id="shuaxin">刷新</a>
+            <div class="choose">
+                <p>
+                    <span class="p1">越</span>
+                    <img src="./images/right.png">
+                </p>
+                <p>
+                    <span class="p2">花</span>
+                    <img src="./images/right.png">
+                </p>
+                <p>
+                    <span  class="p3">有</span>
+                    <img src="./images/right.png">
+                </p>
+                <p>
+                    <span>都</span>
+                    <img src="./images/right.png">
+                </p>
+            </div>
+            <div class="choose_ed">请顺序点击 &nbsp;[<span id="code_01">花</span>，<span id="code_02">有</span>]</div>
+        </div>
+        <a href="javascript:void(0)" class="close"></a>
+    </section>
+    <!-- 遮罩层 -->
+    <section class="mask" id="mask"></section>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+
+</body>
+
+</html>
+<script src="js/index.js"></script>
