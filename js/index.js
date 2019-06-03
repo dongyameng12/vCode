@@ -19,16 +19,16 @@ $(document).ready(function () {
             },500)
         } else{
             $('.choose img').hide()
-            oneStatus = false
             $('.choose_ed').html("<p class='fail'>验证错误</p>")
             setTimeout(function(){
                 resetData()
-            },1000)
+            },500)
            
         }
     })
     // 刷新内容
     function resetData (){
+        oneStatus = false
         $('.choose_ed').html(" 请顺序点击 &nbsp;[<span id='code_01'>花</span>，<span id='code_02'>有</span>]")
         var dataArr = ['越','花','有','都','你','的','谁','生']
         var newDdata = []
@@ -68,7 +68,6 @@ $(document).ready(function () {
     //点击刷新按钮
     $('#shuaxin').on('click',function(){
         $('.choose img').hide()
-        oneStatus = false
         resetData ()   
     })
     $('.close').on('click',function(){
