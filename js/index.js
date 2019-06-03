@@ -14,17 +14,22 @@ $(document).ready(function () {
             $(".choose p").unbind("click")
             $(this).children('img').show();
             setTimeout(function () {
-                console.log('%c跳转','color:red','adfadfaf')
+                $('#shuaxin').hide();
+               $('.choose_ed').html("<p class='success'>验证成功</p>")
             },500)
         } else{
-            // alert('刷新文字')
             $('.choose img').hide()
             oneStatus = false
-            resetData()
+            $('.choose_ed').html("<p class='fail'>验证错误</p>")
+            setTimeout(function(){
+                resetData()
+            },1000)
+           
         }
     })
     // 刷新内容
     function resetData (){
+        $('.choose_ed').html(" 请顺序点击 &nbsp;[<span id='code_01'>花</span>，<span id='code_02'>有</span>]")
         var dataArr = ['越','花','有','都','你','的','谁','生']
         var newDdata = []
         var getArr = getNumber(0, dataArr.length, 4)
